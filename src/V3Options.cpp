@@ -673,7 +673,7 @@ string V3Options::getenvBuiltins(const string& var) {
     }
 }
 
-#ifdef __FreeBSD__
+#if defined(__FreeBSD__) || defined(__OpenBSD__)
 string V3Options::getenvMAKE() { return V3Os::getenvStr("MAKE", "gmake"); }
 #else
 string V3Options::getenvMAKE() { return V3Os::getenvStr("MAKE", "make"); }
